@@ -1,9 +1,21 @@
+import Marquee from "@/components/Marquee";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  const res = await fetch('https://news-api-v2.vercel.app/api/news/sections');
+  const data = await res.json();
+  const sections = data.data;
+  const mainNews = sections[0].articles;
+  console.log(mainNews);
   return (
     <div >
-      ৮৫৯ সালে প্রতিষ্ঠিত আল কারাউইয়্যিন বিশ্ববিদ্যালয়কে বর্তমান বিশ্বের 'প্রাচীনতম বিশ্ববিদ্যালয়' হিসেবে স্বীকৃতি দিয়েছে ইউনেস্কো ও গিনেস বুক অব ওয়ার্ল্ড রেকর্ডস। এটি চালু হওয়ার দু'শ বছরেরও বেশি সময় পর ১০৮৮ সালে ইতালিতে 'বোলোনিয়া বিশ্ববিদ্যালয়' কার্যক্রম শুরু করে, যা ইউরোপের সবচেয়ে প্রাচীন বিশ্ববিদ্যালয় হিসেবে স্বীকৃত। এর বছর আটেকের মাথায় ইংল্যান্ডের অক্সফোর্ড বিশ্ববিদ্যালয় প্রতিষ্ঠিত হয়। আর ক্যামব্রিজ বিশ্ববিদ্যালয়ের জন্ম হয়েছিল তারও শত বছর পরে, ত্রয়োদশ শতকের শুরুর দিকে।
+      <Marquee></Marquee>
+      <div className="grid grid-cols-3 max-w-7xl mx-auto">
+        {/* news section */}
+        <div className="bg-red-500 col-span-2 p-10"></div>
+        {/* most read section */}
+        <div className="bg-green-500 col-span-1 p-10"></div>
+      </div>
     </div>
   );
 }
