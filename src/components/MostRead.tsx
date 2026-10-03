@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 interface MostReadNews {
@@ -15,10 +16,13 @@ const MostRead = async () => {
             <h1 className='font-bold text-red-700 mb-3'>সর্বাধিক পঠিত</h1>
            <div className='grid gap-3'>
              {
-                news.map((n, i)=> <div className='flex gap-2 ' key={n.id}>
+                news.map((n, i)=> 
+                <Link href={`/news/${n.id}`}
+                 key={n.id} className='block' >
+                <div className='flex gap-2 ' key={n.id}>
                     <p className='text-2xl font-bold text-red-500'>{i + 1}</p>
                     <h2>{n.title}</h2>
-                </div>)
+                </div></Link>)
             }
            </div>
         </div>
