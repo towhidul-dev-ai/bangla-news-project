@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bangla News 24
 
-## Getting Started
+Bangla News 24 is a modern Bengali news website built with Next.js. The project focuses on creating a clean, responsive, and easy-to-use platform where users can browse news by category, read full articles, and manage their accounts.
 
-First, run the development server:
+The project was built as a practical Next.js application to work with API-driven content, dynamic routing, authentication, database integration, and responsive UI design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+https://bangla-news-project.vercel.app/
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Repository
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+https://github.com/towhidul-dev-ai/bangla-news-project
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Overview
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Bangla News 24 provides a newspaper-style interface for browsing Bengali news from different categories. The homepage highlights important stories while also providing sections for the latest news, most-read articles, and category-based content.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Users can open any article to view its full details. The application also includes authentication, allowing users to create an account, sign in, view their profile, and sign out.
 
-## Deploy on Vercel
+The main goal of this project was to build a complete news platform while applying modern Next.js development practices.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Features
+
+### News
+
+- Browse the latest news from the homepage
+- Featured news section
+- Category-based news
+- Most-read news section
+- Individual article details pages
+- Dynamic routes for news articles
+- API-based news data
+
+### Authentication
+
+- User registration
+- Email and password authentication
+- Google authentication
+- GitHub authentication
+- User session management
+- Profile page
+- Sign out functionality
+
+### User Interface
+
+- Responsive design
+- Newspaper-inspired layout
+- Clean navigation system
+- Bengali language content
+- Responsive news cards
+- Modern article details page
+- Mobile-friendly layout
+
+---
+
+## Tech Stack
+
+**Frontend**
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- DaisyUI
+
+**Authentication & Database**
+
+- Better Auth
+- MongoDB
+
+**Data**
+
+- News API
+
+**Deployment**
+
+- Vercel: https://bangla-news-project.vercel.app/
+
+
