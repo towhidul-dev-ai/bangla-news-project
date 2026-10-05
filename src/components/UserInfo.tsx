@@ -6,43 +6,60 @@
 // const UserInfo = () => {
 //   const { data: session } = authClient.useSession();
 //   const user = session?.user;
-//   console.log(user);
 
 //   const handleSignout = async () => {
 //     await authClient.signOut();
 //   };
 
 //   return (
-//     <div className="absolute right-4 top-4 flex items-center gap-3 text-sm">
+//     <div className="flex flex-col items-center gap-1">
 //       {user ? (
-//         <div className="flex flex-col items-center gap-2">
-//           <Link href={"/profile"}>
+//         <>
+//           {/* Profile Image */}
+//           <Link href="/profile">
 //             <div className="avatar">
-//               <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2">
-//                 <img
-//                   alt="Tailwind-CSS-Avatar-component"
-//                   src={user?.image as string}
-//                 />
+//               <div className="w-10 rounded-full ring-2 ring-primary ring-offset-2 ring-offset-base-100">
+//                 {user.image ? (
+//                   <img
+//                     src={user.image}
+//                     alt={user.name || "User"}
+//                     className="h-10 w-10 rounded-full object-cover"
+//                   />
+//                 ) : (
+//                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 font-bold text-gray-700">
+//                     {user.name?.charAt(0).toUpperCase() || "U"}
+//                   </div>
+//                 )}
 //               </div>
 //             </div>
 //           </Link>
 
-//           <h2>{user?.name}</h2>
+//           {/* User Name */}
+//           <Link
+//             href="/profile"
+//             className="whitespace-nowrap text-sm font-medium"
+//           >
+//             {user.name}
+//           </Link>
 
-//           <button onClick={handleSignout} className="btn btn-error btn-xs">
-//             Signout
+//           {/* Signout */}
+//           <button
+//             onClick={handleSignout}
+//             className="btn btn-error btn-sm mt-1"
+//           >
+//             Sign out
 //           </button>
-//         </div>
+//         </>
 //       ) : (
-//         <div>
-//           <Link href={"/signin"}>
-//             <button className="btn btn-ghost text-neutral-700 transition-colors hover:text-red-700">
+//         <div className="flex items-center gap-5">
+//           <Link href="/signin">
+//             <button className="btn btn-ghost text-neutral-700 hover:text-red-700">
 //               সাইন ইন
 //             </button>
 //           </Link>
-//           <Link href={"/signup"}>
-//             {/* {" "} */}
-//             <button className="btn  bg-red-700 px-3 py-1.5 font-semibold text-white transition-colors hover:bg-red-800">
+
+//           <Link href="/signup">
+//             <button className="btn bg-red-700 px-4 font-semibold text-white hover:bg-red-800">
 //               সাইন আপ
 //             </button>
 //           </Link>
@@ -53,7 +70,6 @@
 // };
 
 // export default UserInfo;
-
 
 "use client";
 
@@ -69,12 +85,12 @@ const UserInfo = () => {
   };
 
   return (
-    <div className="absolute right-4 top-4 flex items-center gap-3 text-sm">
+    <div className="flex flex-col items-center gap-1">
       {user ? (
-        <div className="flex flex-col items-center gap-2">
+        <>
           <Link href="/profile">
             <div className="avatar">
-              <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2">
+              <div className="w-10 rounded-full ring-2 ring-primary ring-offset-2">
                 {user.image ? (
                   <img
                     src={user.image}
@@ -82,7 +98,7 @@ const UserInfo = () => {
                     className="h-10 w-10 rounded-full object-cover"
                   />
                 ) : (
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 text-lg font-bold text-gray-700">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 font-bold">
                     {user.name?.charAt(0).toUpperCase() || "U"}
                   </div>
                 )}
@@ -90,25 +106,30 @@ const UserInfo = () => {
             </div>
           </Link>
 
-          <h2>{user.name}</h2>
+          <Link
+            href="/profile"
+            className="whitespace-nowrap text-sm"
+          >
+            {user.name}
+          </Link>
 
           <button
             onClick={handleSignout}
-            className="btn btn-error btn-xs"
+            className="btn btn-error btn-sm"
           >
-            Signout
+            Sign out
           </button>
-        </div>
+        </>
       ) : (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <Link href="/signin">
-            <button className="btn btn-ghost text-neutral-700 transition-colors hover:text-red-700">
+            <button className="btn btn-ghost">
               সাইন ইন
             </button>
           </Link>
 
           <Link href="/signup">
-            <button className="btn bg-red-700 px-3 py-1.5 font-semibold text-white transition-colors hover:bg-red-800">
+            <button className="btn bg-red-700 text-white">
               সাইন আপ
             </button>
           </Link>

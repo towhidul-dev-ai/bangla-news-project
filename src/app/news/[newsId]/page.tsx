@@ -20,6 +20,7 @@
 // export default NewsDetailsPage;
 
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 const NewsDetailsPage = async ({
   params,
@@ -34,6 +35,10 @@ const NewsDetailsPage = async ({
 
   const data = await res.json();
   const news = data.data;
+
+  if(!news){
+    notFound();
+  }
 
   return (
     <main className="bg-white">

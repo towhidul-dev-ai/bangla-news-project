@@ -1,5 +1,6 @@
 
 import NewsCard from '@/components/NewsCard'
+import { notFound } from 'next/navigation';
 
 interface ICategoryNews {
     id: string,
@@ -18,6 +19,10 @@ const CategoryNews = async ({params}: {params:{categoryId: string}}) => {
     const res = await fetch(`https://news-api-v2.vercel.app/api/category/${categoryId}`);
     const data = await res.json();
     const categoryNews:ICategoryNews[] = data.data;
+
+    if(!categoryNews){
+        notFound();
+      }
    
 
 
