@@ -40,13 +40,12 @@ const MainNews = ({ news }: {news: News[]}) => {
 
       <div className="grid gap-2">
         {otherNews.slice(0, 4).map((on) => (
-          <div
-            className="card bg-base-100 border border-gray-300 p-5"
-            key={on.id}
-          >
-            <p className="text-red-600 font-semibold">{firstNews.category}</p>
-            <div>{on.title}</div>
-          </div>
+          <Link href={`/news/${on.id}`} key={on.id}>
+            <div className="card bg-base-100 border border-gray-300 p-5 hover:bg-gray-50">
+              <p className="text-red-600 font-semibold">{on.category}</p>
+              <div>{on.title}</div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
